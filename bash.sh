@@ -3,7 +3,7 @@ cd src || { echo "Error"; exit 1; }
 
 echo "Start"
 
-echo "Removing redundant top-level modules..."
+echo "Removing ..."
 rm -f App.idr Config.idr Core/Interfaces.idr Core/Manager.idr Core/Models.idr Core/Effects.idr
 echo "Removing unnecessary files"
 rm -f Plugins/Auditing/ConsoleLogger.idr
