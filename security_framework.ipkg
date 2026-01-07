@@ -1,0 +1,38 @@
+package advanced_security_framework
+
+modules = Data.AVLTree
+        , Data.Trie
+        , Data.Capability.Store
+        , Core.Types.Capability
+        , Core.Types.Session
+        , Core.Types.Policy
+        , Core.Interfaces.Authentication
+        , Core.Interfaces.Authorization
+        , Core.Interfaces.Auditing
+        , Core.Manager.SessionManager
+        , Core.Manager.PolicyManager
+        , Core.Manager.CapabilityManager
+        , Plugins.Authentication.EnhancedStaticAuth
+        , Plugins.Authentication.JWTAuthProvider
+        , Plugins.Authorization.EnhancedRBAC
+        , Plugins.Authorization.EnhancedABAC
+        , Plugins.Auditing.StructuredLogger
+        , Plugins.Auditing.FileAuditLogger
+        , Config.SecurityContexts
+        , App.SecurityOperations
+        , App.Main
+        -- , Test.TestCore
+        -- , Test.TestPlugins
+
+sourcedir = "src"
+
+depends = base, contrib
+
+executable = security-app
+    main = App.Main
+
+-- executable = test-core
+--     main = Test.TestCore.runAllTests
+
+-- executable = test-plugins
+--     main = Test.TestPlugins.runAllTests
