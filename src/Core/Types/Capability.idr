@@ -115,6 +115,8 @@ Show Capability where
 
 export
 data HasCapability : CapabilityType -> String -> Type where
+  Evidence : (c : CapabilityType) -> (r : String) -> HasCapability c r
 
 export
-MkCapabilityProof : HasCapability c r
+MkCapabilityProof : (c : CapabilityType) -> (r : String) -> HasCapability c r
+MkCapabilityProof c r = Evidence c r
